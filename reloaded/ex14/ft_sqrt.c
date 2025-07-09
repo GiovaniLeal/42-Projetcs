@@ -1,36 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_print_alphabet.c                                :+:      :+:    :+:   */
+/*   ft_sqrt.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: giodos-s <giodos-s@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/07/08 17:07:55 by giodos-s          #+#    #+#             */
-/*   Updated: 2025/07/08 17:33:31 by giodos-s         ###   ########.fr       */
+/*   Created: 2025/07/09 13:26:13 by giodos-s          #+#    #+#             */
+/*   Updated: 2025/07/09 13:52:33 by giodos-s         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <unistd.h>
-
-void    ft_putchar(char c)
+int     ft_sqrt(int nb)
 {
-    write(1, &c, 1);
-}
+    int     number;
 
-void    ft_print_alphabet(void)
-{
-    char    current_c;
-
-    current_c = 'a';
-    while (current_c<= 'z')
+    number = 2;
+    while ( number * number != nb && number <= nb/2)
     {
-        ft_putchar(current_c);
-        current_c++;
+        number++;
     }
-}
-
-int     main(void)
-{
-    ft_print_alphabet();
-    return(0);
+    if (number * number == nb)
+    {
+        return(number);
+    }
+    else
+    {
+        return(0);
+    }
 }

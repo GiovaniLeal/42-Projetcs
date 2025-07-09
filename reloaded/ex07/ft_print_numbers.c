@@ -1,36 +1,36 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_print_alphabet.c                                :+:      :+:    :+:   */
+/*   ft_print_numbers.c                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: giodos-s <giodos-s@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/07/08 17:07:55 by giodos-s          #+#    #+#             */
-/*   Updated: 2025/07/08 17:33:31 by giodos-s         ###   ########.fr       */
+/*   Created: 2025/07/08 17:35:32 by giodos-s          #+#    #+#             */
+/*   Updated: 2025/07/09 09:59:28 by giodos-s         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <unistd.h>
+#include<unistd.h>
 
-void    ft_putchar(char c)
+void    ft_putchar(char nb)
 {
-    write(1, &c, 1);
+    write(1, &nb, 1);
 }
 
-void    ft_print_alphabet(void)
+void    ft_print_numbers(void)
 {
-    char    current_c;
+    int     current_nb;
 
-    current_c = 'a';
-    while (current_c<= 'z')
+    current_nb = 48;
+    while (current_nb < 58)
     {
-        ft_putchar(current_c);
-        current_c++;
+        ft_putchar(current_nb);
+        current_nb++;
     }
 }
 
 int     main(void)
 {
-    ft_print_alphabet();
+    ft_print_numbers();
     return(0);
 }

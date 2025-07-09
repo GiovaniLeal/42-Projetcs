@@ -1,36 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_print_alphabet.c                                :+:      :+:    :+:   */
+/*    ft_recursive_factorial.c                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: giodos-s <giodos-s@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/07/08 17:07:55 by giodos-s          #+#    #+#             */
-/*   Updated: 2025/07/08 17:33:31 by giodos-s         ###   ########.fr       */
+/*   Created: 2025/07/09 13:12:18 by giodos-s          #+#    #+#             */
+/*   Updated: 2025/07/09 13:25:46 by giodos-s         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <unistd.h>
+#include<stdio.h>
 
-void    ft_putchar(char c)
+int    ft_recursive_factorial(int nb)
 {
-    write(1, &c, 1);
-}
+    int     current_nb;
 
-void    ft_print_alphabet(void)
-{
-    char    current_c;
-
-    current_c = 'a';
-    while (current_c<= 'z')
+    current_nb = 1;
+    while ( nb > 0) 
     {
-        ft_putchar(current_c);
-        current_c++;
+        current_nb *= nb;
+        ft_recursive_factorial(current_nb);
+        nb--;
     }
+    return(current_nb);
+
 }
 
-int     main(void)
-{
-    ft_print_alphabet();
-    return(0);
-}

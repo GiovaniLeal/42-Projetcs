@@ -1,36 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_print_alphabet.c                                :+:      :+:    :+:   */
+/*   ft_strlen.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: giodos-s <giodos-s@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/07/08 17:07:55 by giodos-s          #+#    #+#             */
-/*   Updated: 2025/07/08 17:33:31 by giodos-s         ###   ########.fr       */
+/*   Created: 2025/07/09 14:20:23 by giodos-s          #+#    #+#             */
+/*   Updated: 2025/07/09 14:25:06 by giodos-s         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <unistd.h>
-
-void    ft_putchar(char c)
+int     ft_strlen(char *str)
 {
-    write(1, &c, 1);
-}
+    int     count;
 
-void    ft_print_alphabet(void)
-{
-    char    current_c;
-
-    current_c = 'a';
-    while (current_c<= 'z')
+    count = 0;
+    while ( str[count] != '\0') 
     {
-        ft_putchar(current_c);
-        current_c++;
+        count++;
     }
-}
-
-int     main(void)
-{
-    ft_print_alphabet();
-    return(0);
+    return(count);
 }

@@ -1,36 +1,41 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_print_alphabet.c                                :+:      :+:    :+:   */
+/*    ft_is_negative.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: giodos-s <giodos-s@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/07/08 17:07:55 by giodos-s          #+#    #+#             */
-/*   Updated: 2025/07/08 17:33:31 by giodos-s         ###   ########.fr       */
+/*   Created: 2025/07/09 10:17:47 by giodos-s          #+#    #+#             */
+/*   Updated: 2025/07/09 10:23:48 by giodos-s         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <unistd.h>
+#include<unistd.h>
 
-void    ft_putchar(char c)
+void    ft_putchar(char sinal)
 {
-    write(1, &c, 1);
+    write(1, &sinal, 1);
 }
 
-void    ft_print_alphabet(void)
+void    ft_is_negative(int n)
 {
-    char    current_c;
+    char    nb_is;
 
-    current_c = 'a';
-    while (current_c<= 'z')
+    if ( n < 0)
     {
-        ft_putchar(current_c);
-        current_c++;
+        nb_is = 'N';
+        ft_putchar(nb_is);
     }
+    else 
+    {
+        nb_is = 'P';
+        ft_putchar(nb_is);
+    }
+    
 }
 
 int     main(void)
 {
-    ft_print_alphabet();
+    ft_is_negative(0);
     return(0);
 }
