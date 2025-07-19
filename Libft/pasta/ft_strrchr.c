@@ -14,28 +14,21 @@
 
 char    *ft_strrchr(const char *s, int c)
 {
-    int     i;
-    char    *pointer;
+    char * s_bytes;
+    int     index;
+    unsigned char uc;
 
-    i = ft_strlen(s);
-    pointer = (char *)s;
+    index = ft_strlen(s);
+    s_bytes = (char *)s;
+    uc = (unsigned char)c;
 
-
-    while(s[i] != c && s[i] != '\0')
+    while (index >= 0)
     {
-        i--;
+        if(s_bytes[index] == uc)
+        {
+            return(&s_bytes[index]);
+        }
+        index--;
     }
-
-    if (s[i] == c)
-    {
-        pointer[0] = s[i];
-        return (&pointer[0]);
-    }
-   
-    if (s[i] == '\0' && c == '\0')
-    {
-        return (&pointer[i]);
-    }
-    
     return (NULL);
 }  
