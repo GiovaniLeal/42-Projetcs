@@ -3,27 +3,24 @@
 /*                                                        :::      ::::::::   */
 /*   ft_bzero.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: marvin <marvin@student.42.fr>              +#+  +:+       +#+        */
+/*   By:giovani giovani@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/07/15 19:09:45 by marvin            #+#    #+#             */
-/*   Updated: 2025/07/15 19:09:45 by marvin           ###   ########.fr       */
+/*   Created: 2025/07/15 19:09:45 bygiovani            #+#    #+#             */
+/*   Updated: 2025/07/15 19:09:45 bygiovani           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stddef.h>
+#include "libft.h"
+
+//Erase data in the n bytes of the memory
 void	*ft_bzero(void *s, size_t n)
 {
-	size_t	current_bt;
-	unsigned char*	new_buffer;
+	unsigned char *s_bytes;
 
-	current_bt = 0;
-	new_buffer = (unsigned char *) s;
-
-	while(current_bt < n)
+	s_bytes = (unsigned char *)s;
+	while (n--)
 	{
-		new_buffer[current_bt] = 0;
-		current_bt++;
+		*s_bytes++ = 0;
 	}
-
-	return ((void *)new_buffer);
+	return (s);
 }

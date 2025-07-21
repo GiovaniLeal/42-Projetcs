@@ -12,21 +12,20 @@
 
 #include <stddef.h>
 
+//copies n bytes from memory area src to dest
 void    *ft_memcpy(void *dest, const void *src, size_t n)
 {
-    size_t  current_bt;
-    unsigned char   *new_dest;
-    const unsigned char   *new_src;
+    unsigned char   *dest_bytes;
+    const unsigned char   *src_bytes;
 
-    current_bt = 0;
-    new_dest = (unsigned char *) dest;
-    new_src = (unsigned char *) src;
-
-
-    while (current_bt < n)
+    dest_bytes = (unsigned char *)dest;
+    src_bytes = (unsigned char *)src;
+    while (n--)
     {
-        new_dest[current_bt] = new_src[current_bt];
-        current_bt++;
+        *dest_bytes = *src_bytes;
+        src_bytes++;
+        dest_bytes++;
+        
     }
-    return (new_dest);
+    return (dest_bytes);
 }

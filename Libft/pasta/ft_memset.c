@@ -12,17 +12,15 @@
 
 #include <stddef.h>
 
-void*	ft_memset(void *buffer, int value, size_t size)
+//fills the first n bytes of memory pointed to s with constant byte c
+void*	ft_memset(void *s, int c, size_t n)
 {
-	size_t	index;
-	unsigned char *	new_buffer;
+	unsigned char	*s_ptr;
 
-	new_buffer = buffer;
-	index = 0;
-	while (index < size)
+	s_ptr = (unsigned char *)s;
+	while (n--)
 	{
-		new_buffer[index] =(unsigned char)value;
-		index++;
+		*s_ptr++ = (unsigned char)c; 
 	}
-	return(new_buffer);	
+	return (s_ptr);
 }

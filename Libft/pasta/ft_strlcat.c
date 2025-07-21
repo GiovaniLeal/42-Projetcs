@@ -12,26 +12,24 @@
 
 #include "libft.h"
 
+//cocatenate dst with src
 size_t  ft_strlcat(char *dst, const char *src, size_t size)
 {
-    size_t i;
-    size_t dst_len;
-    size_t cat_value;
+    size_t  i;
+    size_t  dst_len;
 
     i = 0;
     dst_len = ft_strlen(dst);
-    cat_value = ft_strlen(dst) + ft_strlen(src);
-
     if (dst_len >= size )
     {
         return (ft_strlen(src) + size );
     }
-    while (dst_len < size -1 && src[i] != '\0') 
+    
+    while ( (dst_len + i) < (size -1) && src[i] != '\0') 
     {
-        dst[dst_len] = src[i];
-        dst_len++;
+        dst[dst_len + i] = src[i];
         i++;
     }
-    dst[dst_len] = '\0';
-    return(cat_value);
+    dst[dst_len + i] = '\0';
+    return(dst_len + ft_strlen(src));
 }

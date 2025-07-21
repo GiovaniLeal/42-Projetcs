@@ -12,24 +12,23 @@
 
 #include "libft.h"
 
-size_t      ft_strlcpy(char *dest, const char *src, size_t size)
+// Copies up to size - 1 characters from src to dst, null-terminating the result.
+size_t  ft_strlcpy(char *dst, const char *src, size_t size)
 {
-    size_t     current_size;
+    size_t i;
 
-    current_size = 0;
-    if (size > 0) 
+    i = 0;
+    if (!dst || !src)
+        return (0);
+
+    if (size > 0)
     {
-        while(src[current_size] && current_size < size -1)
-         {
-            dest[current_size] = src[current_size];
-            current_size++;
+        while (src[i] && i < (size - 1))
+        {
+            dst[i] = src[i];
+            i++;
         }
-        dest[current_size] = '\0';
+        dst[i] = '\0';
     }
-    
-    while(src[current_size])
-    {
-        current_size++;
-    }   
-    return (current_size); 
+    return (ft_strlen(src));
 }

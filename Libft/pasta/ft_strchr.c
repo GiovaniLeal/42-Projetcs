@@ -12,27 +12,16 @@
 
 #include "libft.h"
 
+//return a pointer to the first occurence of character c
 char    *ft_strchr(const char *s, int c)
 {
-    int     i;
-    char  *find;
-
-    i = 0;
-    find = (char *)s;
-    
-    while (s[i])
+    while (*s)
     {
-        if (s[i] == (char)c)
-        {
-            return (&find[i]);
-        }
-        i++;
+        if (*s == (char)c)
+            return((char *)s);
+        s++;    
     }
-    
-    if (s[i] == '\0' && c == '\0')
-    {
-        find[i] = s[i];
-        return(&find[i]);
-    }
+    if (c == '\0')
+        return((char *)s);
     return (NULL);
 }

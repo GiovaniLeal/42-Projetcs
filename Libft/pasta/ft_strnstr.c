@@ -12,27 +12,25 @@
 
 #include "libft.h"
 
+// Locate the first occurrence of the substring needle in the first len characters of haystack.
 char	*ft_strnstr(const char *haystack, const char *needle, size_t n )
 {
-	size_t index_h;
-	size_t index_n;
+	size_t i;
+	size_t j;
 
-	index_h = 0;
+	i= 0;
+	j = 0;
+
 	if (!*needle)
 		return ((char *)haystack);
 
-	while (haystack[index_h] != '\0' && index_h < n)
+	while (i < n && *haystack) 
 	{
-		index_n = 0;
-		while ((index_h + index_n) < n 
-			&& haystack[index_h + index_n] == needle[index_n] 
-			&& needle[index_n] != '\0')
-		{
-			index_n++;
-		}
-		if (needle[index_n] == '\0')
-			return ((char *)&haystack[index_h]);
-		index_h++;
+		while ((i + j) < n && haystack[i + j] == needle[j])
+			j++;
+		if( needle[j] == '\0')
+			return ((char *)(haystack + i));
+		i++;
 	}
-	return (NULL);	
+	return(NULL); 	
 }

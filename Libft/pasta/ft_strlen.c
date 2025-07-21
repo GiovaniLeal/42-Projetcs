@@ -12,14 +12,13 @@
 
 #include "libft.h"
 
+// Count the length of the string `s` (excluding the null terminator)
 size_t		ft_strlen(const char *s)
 {
 	size_t	count;
 	
 	count = 0;
 	while (s[count])
-	{
 		count++;
-	}
 	return(count);	
 }

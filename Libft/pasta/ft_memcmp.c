@@ -12,22 +12,22 @@
 
 #include "libft.h"
 
+// compares the first n bytes of the memory areas s1 and s2
 int	ft_memcmp(const void *s1, const void *s2, size_t n)
 {
 	unsigned char *s1_byte;
 	unsigned char *s2_byte;
-	size_t index;
 
-	index = 0;
 	s1_byte = (unsigned char*)s1;
 	s2_byte = (unsigned char*)s2;
-	while (index < n)
+	while (n--)
 	{
-		if (s1_byte[index] != s2_byte[index])
+		if (*s1_byte != *s2_byte)
 		{
-			return(s1_byte[index] - s2_byte[index]);
+			return(*s1_byte - *s2_byte);
 		}
-		index++;
+		s2_byte++;
+		s1_byte++;
 	}
 	return (0);
 }

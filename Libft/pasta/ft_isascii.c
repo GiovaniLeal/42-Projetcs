@@ -3,13 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   ft_isascii.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: marvin <marvin@student.42.fr>              +#+  +:+       +#+        */
+/*   By:giovani giovani@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/07/14 19:45:06 by marvin            #+#    #+#             */
-/*   Updated: 2025/07/14 19:45:06 by marvin           ###   ########.fr       */
+/*   Created: 2025/07/14 19:45:06 bygiovani            #+#    #+#             */
+/*   Updated: 2025/07/14 19:45:06 bygiovani           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+// return 1 if true or 0 if false
 int	ft_isascii(int number)
 {
 	return ((number >= 0 && number <= 127));

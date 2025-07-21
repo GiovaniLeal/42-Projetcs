@@ -12,6 +12,7 @@
 
 #include "libft.h"
 
+//Returns a pointer to the last occurrence of character c in string s, or NULL.
 char    *ft_strrchr(const char *s, int c)
 {
     char * s_bytes;

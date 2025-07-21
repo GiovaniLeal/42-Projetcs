@@ -12,33 +12,31 @@
 
 #include <stddef.h>
 
+//copies n bytes from src to dest. 
 void    *ft_memmove(void *dest, const void *src, size_t n)
 {
-    size_t  index;
-    unsigned char   *new_dest;
-    unsigned char   *new_src;
+    void    *return_address;
+    unsigned char   *dest_byte;
+    unsigned char   *src_byte;
 
-    index = 0;
-    new_dest = (unsigned char *)dest;
-    new_src = (unsigned char *)src;
-
-    if (new_src > new_dest)
-    {
-        while (index < n)
-        {
-            new_dest[index] = new_src[index];
-            index++;
-        }
-    }
-    else 
+    return_address = dest;
+    dest_byte = (unsigned char *)dest;
+    src_byte = (unsigned char *)src;
+    if (dest_byte < src_byte)
     {
         while (n--)
         {
-            new_dest[n] = new_src[n];
+            *dest_byte++ = *src_byte++;
         }
     }
-    
-    return ((void *)new_dest); 
+    else if (dest_byte > src_byte)
+    {
+        while (n--)
+        {
+            dest_byte[n] = src_byte[n];
+        }
+    }
+    return (return_address);
 }
     
     
