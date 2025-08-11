@@ -1,21 +1,22 @@
 <div align="center">
-  <h1>Sobre | LIBFT </h1>
-  <p>Este repositório reúne os projetos desenvolvidos durante a formação em Engenharia de Software na <strong>42 São Paulo</strong>.
-     Todos os projetos foram implementados na linguagem <strong>C</strong>.</p>
-  <p>A lista a seguir está organizada do projeto mais recente ao mais antigo.</p>
+  <h1>Libft</h1>
+  <p><em> Reimplementação da biblioteca padrão C</em></p>
 </div>
 
-## 📚 Sumário
+## 📖 Sobre o Projeto
 
-- [🟣 Funções de Strings](#🟣-funções-de-strings)  
-- [🔵 Funções de Memória](#🔵-funções-de-memória)  
-- [🟠 Funções de Caracteres](#🟠-funções-de-caracteres)  
-- [🟢 Funções de Conversão](#🟢-funções-de-conversão)  
-- [🔷 Funções de Saída (File Descriptor)](#🔷-funções-de-saída-file-descriptor)  
+O projeto **Libft** consiste na reimplementação, em linguagem C, de um conjunto de funções da biblioteca padrão do C, além de funções adicionais úteis para manipulação de strings, memória, conversão e manipulação de listas ligadas.
+
+O objetivo principal é aprofundar o conhecimento sobre manipulação de memória, ponteiros, strings e estruturas de dados básicas, além de aprender a criar bibliotecas reutilizáveis e modularizadas.
+
+Este projeto serve como base para projetos futuros na 42 e reforça boas práticas de programação em C, incluindo gerenciamento de memória e tratamento de erros.
 
 ---
 
-## 🟣 Funções de Strings
+## 📚 Sumário | Funções criadas
+
+<details>
+<summary><b>Funções de Strings</b></summary>
 
 | Função       | Descrição |
 |--------------|-----------|
@@ -32,11 +33,10 @@
 | `strtrim`    | Remove caracteres específicos do início e do fim de uma string. |
 | `substr`     | Cria uma nova string copiando parte de outra, a partir de um índice e tamanho. |
 
-[⬆ Voltar ao sumário](#📚-sumário)
+</details>
 
----
-
-## 🔵 Funções de Memória
+<details>
+<summary><b>Funções de Memória</b></summary>
 
 | Função       | Descrição |
 |--------------|-----------|
@@ -48,11 +48,10 @@
 | `memmove`    | Copia bytes de uma área de memória para outra (segura para sobreposição). |
 | `memset`     | Preenche uma área de memória com um byte específico. |
 
-[⬆ Voltar ao sumário](#📚-sumário)
+</details>
 
----
-
-## 🟠 Funções de Caracteres
+<details>
+<summary><b>Funções de Caracteres</b></summary>
 
 | Função       | Descrição |
 |--------------|-----------|
@@ -63,22 +62,20 @@
 | `tolower`    | Converte um caractere para minúsculo, se for maiúsculo. |
 | `toupper`    | Converte um caractere para maiúsculo, se for minúsculo. |
 
-[⬆ Voltar ao sumário](#📚-sumário)
+</details>
 
----
-
-## 🟢 Funções de Conversão
+<details>
+<summary><b>Funções de Conversão</b></summary>
 
 | Função       | Descrição |
 |--------------|-----------|
 | `atoi`       | Converte uma string para um número inteiro (`int`). |
 | `itoa`       | Converte um número inteiro para uma string. |
 
-[⬆ Voltar ao sumário](#📚-sumário)
+</details>
 
----
-
-## 🔷 Funções de Saída (File Descriptor)
+<details>
+<summary><b>Funções de Saída (File Descriptor)</b></summary>
 
 | Função       | Descrição |
 |--------------|-----------|
@@ -87,6 +84,40 @@
 | `putnbr_fd`  | Escreve um número inteiro em um descritor de arquivo. |
 | `putstr_fd`  | Escreve uma string em um descritor de arquivo. |
 
-[⬆ Voltar ao sumário](#📚-sumário)
+</details>
 
+<details>
+<summary><b>Funções Bônus</b></summary>
+
+| Função           | Descrição |
+|------------------|-----------|
+| `ft_lstnew`       | Cria um novo nó para uma lista ligada. |
+| `ft_lstadd_front` | Adiciona um nó no início da lista ligada. |
+| `ft_lstsize`      | Retorna o número de nós da lista ligada. |
+| `ft_lstlast`      | Retorna o último nó da lista ligada. |
+| `ft_lstadd_back`  | Adiciona um nó no final da lista ligada. |
+| `ft_lstdelone`    | Apaga um nó da lista usando uma função de liberação. |
+| `ft_lstclear`     | Apaga e libera todos os nós da lista ligada. |
+| `ft_lstiter`      | Aplica uma função a cada nó da lista. |
+| `ft_lstmap`       | Cria uma nova lista aplicando uma função a cada nó da lista original. |
+
+</details>
+
+---
+
+## 🧪 Testes automatizados com a francinette
+
+Este projeto pode ser testado automaticamente utilizando a ferramenta **francinette**, amplamente utilizada para validar a correção das funções implementadas na Libft.
+
+Para rodar os testes, basta acessar o repositório oficial da francinette e seguir as instruções:
+
+➡️ [Repositório oficial da francinette](https://github.com/afrancinette/afrancinette)
+
+A ferramenta executa uma bateria completa de testes, cobrindo funções obrigatórias e bônus, fornecendo feedback detalhado para garantir que o projeto está conforme os requisitos da escola.
+
+---
+
+<div align="center">
+  <sub>Projeto desenvolvido para a Escola 42 São Paulo — Libft</sub>
+</div>
 
