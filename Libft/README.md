@@ -111,7 +111,7 @@ Este projeto pode ser testado automaticamente utilizando a ferramenta **francine
 
 Para rodar os testes, basta acessar o repositório oficial da francinette e seguir as instruções:
 
-➡️ [Repositório oficial da francinette](https://github.com/afrancinette/afrancinette)
+➡️ [Repositório oficial da francinette](https://github.com/xicodomingues/francinette)
 
 A ferramenta executa uma bateria completa de testes, cobrindo funções obrigatórias e bônus, fornecendo feedback detalhado para garantir que o projeto está conforme os requisitos da escola.
 
