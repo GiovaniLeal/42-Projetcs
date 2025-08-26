@@ -3,44 +3,43 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: marvin <marvin@student.42.fr>              +#+  +:+       +#+         #
+#    By: giodos-s <giodos-s@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
-#    Created: 2025/08/08 13:50:56 by marvin            #+#    #+#              #
-#    Updated: 2025/08/08 13:50:56 by marvin           ###   ########.fr        #
+#    Created: 2025/08/20 19:05:12 by giodos-s          #+#    #+#              #
+#    Updated: 2025/08/20 19:05:12 by giodos-s         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME = libftprintf.a
-MAINTEST = test_printf
 CC = cc
-CFLAGS = -Wall -Wextra -Werror -I.
+FLAGS = -Wall -Wextra -Werror
 
-SRC = ft_printf.c \
-      ft_print_char.c \
-      ft_print_str.c \
-      ft_convert_hex.c \
-      ft_print_numb.c \
-      ft_print_unsigned_nb.c \
-      ft_lower_hex.c \
-      ft_upper_hex.c \
-      ft_count_digits.c
+SRCS = ft_printf.c \
+	ft_putstr_count.c \
+	ft_putchar_count.c \
+	ft_putnbr.c \
+	ft_putnbr_hex.c
+# BONUS_SRCS =
 
-OBJ = $(SRC:.c=.o)
+OBJS = $(SRCS:.c=.o)
+# BONUS_OBJS = $(BONUS_SRCS:.c=.o)
 
-all: $(NAME) 
-$(NAME): $(OBJ)
-	ar rcs $(NAME) $(OBJ)
+all: $(NAME)
 
+$(NAME): $(OBJS)
+	ar rcs $(NAME) $(OBJS)
+
+# bonus: all $(BONUS_OBJS)
+# 	ar rcs $(NAME) $(BONUS_OBJS)
 %.o: %.c
-	$(CC) $(CFLAGS) -c $< -o $@
+	$(CC) $(FLAGS) -c $< -o $@	
 
 clean:
-	rm -f $(OBJ) 
+	rm -f $(OBJS)
 
 fclean: clean
-	rm -f $(NAME) 
+	rm -f $(NAME)
 
 re: fclean all
 
-.PHONY: all clean fclean re
-
+.PHONY: all clean fclean re 

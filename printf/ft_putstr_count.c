@@ -1,24 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_printf.h                                        :+:      :+:    :+:   */
+/*   fr_putstr_count.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: giodos-s <giodos-s@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/08/20 19:01:54 by giodos-s          #+#    #+#             */
-/*   Updated: 2025/08/20 19:01:54 by giodos-s         ###   ########.fr       */
+/*   Created: 2025/08/20 19:21:03 by giodos-s          #+#    #+#             */
+/*   Updated: 2025/08/20 19:21:03 by giodos-s         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef FT_PRINTF_H
-# define FT_PRINTF_H
-# include <unistd.h>
-# include <stdarg.h>
+#include "ft_printf.h"
 
-int	ft_putchar_count(char c);
-int	ft_putstr_count(char *str);
-int	ft_putnbr(char fmt, long nb);
-int	ft_putnbr_hex(char fmt, unsigned long n);
-int	ft_printf(const char *fmt, ...);
+int	ft_putstr_count(char *str)
+{
+	int	count;
 
-#endif
+	count = 0;
+	if (!str)
+		return (ft_putstr_count("(null)"));
+	while (*str)
+	{
+		count += ft_putchar_count(*str++);
+	}
+	return (count);
+}
